@@ -4,7 +4,6 @@ import { animals, links } from './data.js';
 var app = new Vue({
   el: '#app',
   data: {
-    message: 'Hello Vue!',
     nodes: animals,
     textElements: {},
     linkElements: {},

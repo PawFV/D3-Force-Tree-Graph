@@ -3,15 +3,42 @@
 
   <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   </head>
 
   <body>
-    <svg></svg>
+    <div id="app">
+
+
+      <svg></svg>
+      <div class="info-box" id="info-box">
+        <h1>Explorer</h1>
+        <div v-if="selectedItem.neighbors.length">
+          <h3>Selected Node:<span :style="{color: selectedItem.color}">{{selectedItem.name.toUpperCase()}}</span> </h3>
+          <p>Relations:</p>
+          <ul>
+            <li v-for="neighbor in selectedItem.neighbors" 
+            v-if="neighbor != selectedItem.name">
+              {{neighbor}}
+            </li>
+          </ul>
+        </div>
+        
+            
+      
+      </div>
+    </div>
+
+
     <script src="https://d3js.org/d3.v5.js"></script>
-    <script src="script.js" type="module">
-    </script>
+    <!-- <script src="script.js" type="module"> </script> -->
+    <script type="module" src="./vueScript.js"> </script>
   </body>
+
+
+
+
 
 </html>
